@@ -9,5 +9,7 @@ public:
 	void render();
 private:
 	sf::RenderWindow& window;
+	sf::Texture backgroundTexture;
+	sf::Sprite background;
 };
 
