@@ -6,9 +6,9 @@ class Entity
 {
 public:
 	Entity();
+	sf::Sprite sprite;
 protected:
 	sf::Texture texture;
-	sf::Sprite sprite;
 	float topSpeed;
 	sf::Vector2f velocity;
 };

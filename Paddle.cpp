@@ -19,14 +19,17 @@ Paddle::Paddle(Team t, int worldWidth, int worldHeight)
 	sprite.setTexture(texture);
 
 	// Set position
+	// Static casts prevent bad interpolation happening at beginning of the game while paddles are stationary
+	int x, y;
 	if (team == LEFT)
 	{
-		sprite.setPosition(OFF_WALL - sprite.getGlobalBounds().width / 2, 
-			worldHeight / 2 - sprite.getGlobalBounds().height / 2);
+		x = static_cast<int>(OFF_WALL - sprite.getGlobalBounds().width / 2);
+		y = static_cast<int>(worldHeight / 2 - sprite.getGlobalBounds().height / 2);
 	}
 	else
 	{
-		sprite.setPosition(worldWidth - OFF_WALL - sprite.getGlobalBounds().width / 2,
-			worldHeight / 2 - sprite.getGlobalBounds().height / 2);
+		x = static_cast<int>(worldWidth - OFF_WALL - sprite.getGlobalBounds().width / 2);
+		y = static_cast<int>(worldHeight / 2 - sprite.getGlobalBounds().height / 2);
 	}
+	sprite.setPosition(x, y);
 }

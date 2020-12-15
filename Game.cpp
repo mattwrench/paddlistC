@@ -5,7 +5,8 @@ const int WINDOW_HEIGHT = 720;
 
 Game::Game()
 	: window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Paddlist"),
-    renderer(window)
+    world(WINDOW_WIDTH, WINDOW_HEIGHT),
+    renderer(window, world)
 {
 }
 

@@ -1,7 +1,9 @@
 #include "Renderer.h"
 
-Renderer::Renderer(sf::RenderWindow& w)
-	: window(w)
+
+Renderer::Renderer(sf::RenderWindow& win, World& wor)
+	: window(win),
+	world(wor)
 {
 	backgroundTexture.loadFromFile("Assets/Images/background.png");
 	background.setTexture(backgroundTexture);
@@ -14,6 +16,10 @@ void Renderer::render()
 
 	// Background
 	window.draw(background);
+
+	// Paddles
+	window.draw(world.player.sprite);
+	window.draw(world.enemy.sprite);
 
 	window.display();
 }

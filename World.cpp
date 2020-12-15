@@ -2,6 +2,8 @@
 
 World::World(int w, int h)
 	: width(w),
-	height(h)
+	height(h),
+	player(LEFT, w, h),
+	enemy(RIGHT, w, h)
 {
 }
