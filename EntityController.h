@@ -9,6 +9,6 @@ public:
 protected:
 	World& world;
 	void setPosition(Entity& entity, float dt);
-	virtual void boundsCheck(Entity& entity);
+	virtual void boundsCheck(Entity& entity) = 0;
 };
 
