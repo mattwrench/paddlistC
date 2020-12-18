@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "World.h"
+#include "PlayerController.h"
 #include "Renderer.h"
 
 class Game
@@ -11,7 +12,9 @@ public:
 	void run();
 private:
 	sf::RenderWindow window;
+	sf::Clock clock;
 	World world;
+	PlayerController playerController;
 	Renderer renderer;
 	void update();
 };

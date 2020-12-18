@@ -5,7 +5,9 @@ const int WINDOW_HEIGHT = 720;
 
 Game::Game()
 	: window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Paddlist"),
+    clock(),
     world(WINDOW_WIDTH, WINDOW_HEIGHT),
+    playerController(world),
     renderer(window, world)
 {
 }
@@ -21,6 +23,10 @@ void Game::run()
 
 void Game::update()
 {
+    // Get dt
+    sf::Time time = clock.restart();
+    float dt = time.asSeconds();
+
 	// Handle input
     sf::Event event;
     while (window.pollEvent(event))
@@ -28,4 +34,6 @@ void Game::update()
         if (event.type == sf::Event::Closed)
             window.close();
     }
+
+    playerController.update(dt);
 }

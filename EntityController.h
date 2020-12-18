@@ -5,7 +5,7 @@ class EntityController
 {
 public:
 	EntityController(World& w);
-	virtual void update() = 0;
+	virtual void update(float dt) = 0;
 protected:
 	World& world;
 	void setPosition(Entity& entity, float dt);
