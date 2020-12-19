@@ -1,7 +1,8 @@
 #include "PlayerController.h"
 
-PlayerController::PlayerController(World& w)
-	: PaddleController(w)
+PlayerController::PlayerController(World& w, InputHandler& i)
+	: PaddleController(w),
+	input(i)
 {
 }
 
@@ -14,5 +15,15 @@ void PlayerController::update(float dt)
 
 void PlayerController::setVelocity(Paddle& paddle)
 {
-	// TODO
+	paddle.velocity.x = 0;
+	paddle.velocity.y = 0;
+
+	if (input.moveDown)
+	{
+		paddle.velocity.y += paddle.topSpeed;
+	}
+	if (input.moveUp)
+	{
+		paddle.velocity.y -= paddle.topSpeed;
+	}
 }

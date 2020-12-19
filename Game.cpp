@@ -8,7 +8,7 @@ Game::Game()
     clock(),
     world(WINDOW_WIDTH, WINDOW_HEIGHT),
     input(window),
-    playerController(world),
+    playerController(world, input),
     renderer(window, world)
 {
 }

@@ -14,5 +14,29 @@ void InputHandler::update()
     {
         if (event.type == sf::Event::Closed)
             window.close();
+
+        else if (event.type == sf::Event::KeyPressed)
+        {
+            if (event.key.code == sf::Keyboard::Down || event.key.code == sf::Keyboard::S)
+            {
+                moveDown = true;
+            }
+            else if (event.key.code == sf::Keyboard::Up || event.key.code == sf::Keyboard::W)
+            {
+                moveUp = true;
+            }
+        }
+
+        else if (event.type == sf::Event::KeyReleased)
+        {
+            if (event.key.code == sf::Keyboard::Down || event.key.code == sf::Keyboard::S)
+            {
+                moveDown = false;
+            }
+            else if (event.key.code == sf::Keyboard::Up || event.key.code == sf::Keyboard::W)
+            {
+                moveUp = false;
+            }
+        }
     }
 }
