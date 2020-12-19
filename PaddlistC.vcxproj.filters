@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Models">
       <UniqueIdentifier>{28bde3dc-e5a6-486a-8287-2a7ae90675d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Controllers">
+      <UniqueIdentifier>{568cf323-7719-4f26-9812-05fccc7c7cf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controllers">
+      <UniqueIdentifier>{a1c8d909-2378-4904-a717-b5d9c9d8ca40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -40,12 +46,15 @@
       <Filter>Source Files\Models</Filter>
     </ClCompile>
     <ClCompile Include="EntityController.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Controllers</Filter>
     </ClCompile>
     <ClCompile Include="PaddleController.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Controllers</Filter>
     </ClCompile>
     <ClCompile Include="PlayerController.cpp">
+      <Filter>Source Files\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,13 +74,16 @@
     <ClInclude Include="World.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="EntityController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PaddleController.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityController.h">
+      <Filter>Header Files\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
+      <Filter>Header Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,7 @@ Game::Game()
 	: window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Paddlist"),
     clock(),
     world(WINDOW_WIDTH, WINDOW_HEIGHT),
+    input(window),
     playerController(world),
     renderer(window, world)
 {
@@ -27,13 +28,7 @@ void Game::update()
     sf::Time time = clock.restart();
     float dt = time.asSeconds();
 
-	// Handle input
-    sf::Event event;
-    while (window.pollEvent(event))
-    {
-        if (event.type == sf::Event::Closed)
-            window.close();
-    }
+    input.update();
 
     playerController.update(dt);
 }
