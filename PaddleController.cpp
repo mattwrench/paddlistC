@@ -7,5 +7,16 @@ PaddleController::PaddleController(World& w)
 
 void PaddleController::boundsCheck(Entity& entity)
 {
-	// TODO
+	// Top wall
+	if (entity.sprite.getPosition().y < 0)
+	{
+		entity.sprite.setPosition(entity.sprite.getPosition().x, 0);
+	}
+
+	// Bottom wall
+	else if (entity.sprite.getPosition().y + entity.sprite.getGlobalBounds().height > world.height)
+	{
+		entity.sprite.setPosition(entity.sprite.getPosition().x,
+			world.height - entity.sprite.getGlobalBounds().height);
+	}
 }
