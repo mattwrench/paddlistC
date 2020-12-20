@@ -21,7 +21,35 @@ void BallController::update(float dt)
 
 void BallController::boundsCheck(Entity& entity)
 {
-	// TODO
+	// Left wall
+	if (entity.sprite.getPosition().x < 0)
+	{
+		entity.sprite.setPosition(0, entity.sprite.getPosition().y);
+		entity.velocity.x *= -1;
+	}
+
+	// Right wall
+	else if (entity.sprite.getPosition().x + entity.sprite.getGlobalBounds().width > world.width)
+	{
+		entity.sprite.setPosition(world.width - entity.sprite.getGlobalBounds().width,
+			entity.sprite.getPosition().y);
+		entity.velocity.x *= -1;
+	}
+
+	// Top wall
+	if (entity.sprite.getPosition().y < 0)
+	{
+		entity.sprite.setPosition(entity.sprite.getPosition().x, 0);
+		entity.velocity.y *= -1;
+	}
+
+	// Bottom wall
+	else if (entity.sprite.getPosition().y + entity.sprite.getGlobalBounds().height > world.height)
+	{
+		entity.sprite.setPosition(entity.sprite.getPosition().x,
+			world.height - entity.sprite.getGlobalBounds().height);
+		entity.velocity.y *= -1;
+	}
 }
 
 void BallController::spawnBalls(float dt)
