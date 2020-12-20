@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "World.h"
 #include "PlayerController.h"
+#include "BallController.h"
 #include "Renderer.h"
 #include "InputHandler.h"
 
@@ -17,6 +18,7 @@ private:
 	World world;
 	InputHandler input;
 	PlayerController playerController;
+	BallController ballController;
 	Renderer renderer;
 	void update();
 };

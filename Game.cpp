@@ -9,6 +9,7 @@ Game::Game()
     world(WINDOW_WIDTH, WINDOW_HEIGHT),
     input(window),
     playerController(world, input),
+    ballController(world),
     renderer(window, world)
 {
 }
