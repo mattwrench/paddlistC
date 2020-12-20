@@ -7,6 +7,7 @@ const int TOP_SPEED = 400;
 const int DEGREES_IN_CIRCLE = 360;
 
 Ball::Ball(int worldWidth, int worldHeight)
+	: remove(false)
 {
 	// Class attributes
 	topSpeed = TOP_SPEED;

@@ -6,5 +6,6 @@ class Ball : public Entity
 {
 public:
 	Ball(int worldWidth, int worldHeight);
+	bool remove;
 };
 

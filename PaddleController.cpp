@@ -5,7 +5,7 @@ PaddleController::PaddleController(World& w)
 {
 }
 
-void PaddleController::boundsCheck(Entity& entity)
+bool PaddleController::boundsCheck(Entity& entity)
 {
 	// Top wall
 	if (entity.sprite.getPosition().y < 0)
@@ -19,4 +19,6 @@ void PaddleController::boundsCheck(Entity& entity)
 		entity.sprite.setPosition(entity.sprite.getPosition().x,
 			world.height - entity.sprite.getGlobalBounds().height);
 	}
+
+	return false;
 }

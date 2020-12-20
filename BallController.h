@@ -9,7 +9,7 @@ public:
 	BallController(World& w);
 	void update(float dt);
 private:
-	void boundsCheck(Entity& entity);
+	bool boundsCheck(Entity& entity);
 	void spawnBalls(float dt);
 	void collisionDetect(Ball& ball);
 	float spawnTimer;

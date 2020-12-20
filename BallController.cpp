@@ -12,29 +12,34 @@ void BallController::update(float dt)
 {
 	spawnBalls(dt);
 
-	for (auto iter = world.pBalls.begin(); iter != world.pBalls.end(); iter++)
+	for (auto iter = world.pBalls.begin(); iter != world.pBalls.end();)
 	{
 		setPosition(**iter, dt);
-		boundsCheck(**iter);
 		collisionDetect(**iter);
+		if (boundsCheck(**iter))
+		{
+			delete* iter;
+			iter = world.pBalls.erase(iter); // Delete ball
+		}
+		else // Do not delete ball; increment iterator normally
+		{
+			iter++;
+		}
 	}
 }
 
-void BallController::boundsCheck(Entity& entity)
+bool BallController::boundsCheck(Entity& entity)
 {
 	// Left wall
 	if (entity.sprite.getPosition().x < 0)
 	{
-		entity.sprite.setPosition(0, entity.sprite.getPosition().y);
-		entity.velocity.x *= -1;
+		return true;
 	}
 
 	// Right wall
 	else if (entity.sprite.getPosition().x + entity.sprite.getGlobalBounds().width > world.width)
 	{
-		entity.sprite.setPosition(world.width - entity.sprite.getGlobalBounds().width,
-			entity.sprite.getPosition().y);
-		entity.velocity.x *= -1;
+		return true;
 	}
 
 	// Top wall
@@ -51,6 +56,8 @@ void BallController::boundsCheck(Entity& entity)
 			world.height - entity.sprite.getGlobalBounds().height);
 		entity.velocity.y *= -1;
 	}
+
+	return false;
 }
 
 void BallController::spawnBalls(float dt)
