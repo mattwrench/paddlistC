@@ -21,5 +21,11 @@ void Renderer::render()
 	window.draw(world.player.sprite);
 	window.draw(world.enemy.sprite);
 
+	// Balls
+	for (auto iter = world.balls.begin(); iter != world.balls.end(); iter++)
+	{
+		window.draw(iter->sprite);
+	}
+
 	window.display();
 }

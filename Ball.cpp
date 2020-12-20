@@ -17,7 +17,7 @@ Ball::Ball(int worldWidth, int worldHeight)
 	// Set random vertical position
 	int x = worldWidth / 2 - sprite.getGlobalBounds().width / 2;
 	srand(time(NULL)); // Initialize random seed
-	int y = (rand() % (worldHeight - static_cast<int>(sprite.getGlobalBounds().height)) + sprite.getGlobalBounds().height / 2;
+	int y = rand() % (worldHeight - static_cast<int>(sprite.getGlobalBounds().height)) + sprite.getGlobalBounds().height / 2;
 	sprite.setPosition(x, y);
 
 	// Set random velocity direction;
