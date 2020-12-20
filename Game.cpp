@@ -9,6 +9,7 @@ Game::Game()
     world(WINDOW_WIDTH, WINDOW_HEIGHT),
     input(window),
     playerController(world, input),
+    enemyController(world),
     ballController(world),
     renderer(window, world)
 {
@@ -32,5 +33,6 @@ void Game::update()
     input.update();
 
     playerController.update(dt);
+    enemyController.update(dt);
     ballController.update(dt);
 }
