@@ -32,4 +32,5 @@ void Game::update()
     input.update();
 
     playerController.update(dt);
+    ballController.update(dt);
 }

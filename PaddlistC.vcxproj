@@ -168,6 +168,24 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Images\background.png" />
+    <Image Include="Assets\Images\ball.png" />
+    <Image Include="Assets\Images\iconPause.png" />
+    <Image Include="Assets\Images\iconPauseTranslucent.png" />
+    <Image Include="Assets\Images\iconPlay.png" />
+    <Image Include="Assets\Images\iconPlayTranslucent.png" />
+    <Image Include="Assets\Images\iconRestart.png" />
+    <Image Include="Assets\Images\iconRestartTranslucent.png" />
+    <Image Include="Assets\Images\numbers.png" />
+    <Image Include="Assets\Images\numbersTranslucent.png" />
+    <Image Include="Assets\Images\paddleBlue.png" />
+    <Image Include="Assets\Images\paddleRed.png" />
+    <Image Include="Assets\Images\textLoser.png" />
+    <Image Include="Assets\Images\textPaused.png" />
+    <Image Include="Assets\Images\textReady.png" />
+    <Image Include="Assets\Images\textWinner.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

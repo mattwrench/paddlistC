@@ -10,8 +10,7 @@ class World
 public:
 	World(int w, int h);
 	Paddle player, enemy;
-	std::vector<Ball> balls;
-private:
+	std::vector<Ball*> pBalls;
 	int width, height;
 };
 

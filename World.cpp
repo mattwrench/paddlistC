@@ -6,4 +6,6 @@ World::World(int w, int h)
 	player(LEFT, w, h),
 	enemy(RIGHT, w, h)
 {
+	// Initialize random generator seed
+	srand(time(NULL));
 }

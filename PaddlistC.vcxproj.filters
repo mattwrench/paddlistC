@@ -99,4 +99,54 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Images\background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\ball.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\iconPause.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\iconPauseTranslucent.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\iconPlay.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\iconPlayTranslucent.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\iconRestart.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\iconRestartTranslucent.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\numbers.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\numbersTranslucent.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\paddleBlue.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\paddleRed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\textLoser.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\textPaused.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\textReady.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Images\textWinner.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

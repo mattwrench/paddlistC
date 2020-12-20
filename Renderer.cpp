@@ -22,9 +22,9 @@ void Renderer::render()
 	window.draw(world.enemy.sprite);
 
 	// Balls
-	for (auto iter = world.balls.begin(); iter != world.balls.end(); iter++)
+	for (auto iter = world.pBalls.begin(); iter != world.pBalls.end(); iter++)
 	{
-		window.draw(iter->sprite);
+		window.draw((**iter).sprite);
 	}
 
 	window.display();

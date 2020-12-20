@@ -3,7 +3,8 @@
 const float SPAWN_RATE = 3.0;
 
 BallController::BallController(World& w)
-	: EntityController(w)
+	: EntityController(w),
+	spawnTimer(SPAWN_RATE) // Spawn first ball immediately
 {
 }
 
@@ -11,8 +12,11 @@ void BallController::update(float dt)
 {
 	spawnBalls(dt);
 
-	for (auto iter = world.balls.begin(); iter != world.balls.end(); iter++)
-	{ }
+	for (auto iter = world.pBalls.begin(); iter != world.pBalls.end(); iter++)
+	{
+		setPosition(**iter, dt);
+		boundsCheck(**iter);
+	}
 }
 
 void BallController::boundsCheck(Entity& entity)
@@ -22,5 +26,13 @@ void BallController::boundsCheck(Entity& entity)
 
 void BallController::spawnBalls(float dt)
 {
-	// TODO
+	spawnTimer += dt;
+
+	if (spawnTimer >= SPAWN_RATE)
+	{
+		Ball* pBall;
+		pBall = new Ball(world.width, world.height);
+		world.pBalls.push_back(pBall);
+		spawnTimer = 0;
+	}
 }
