@@ -61,7 +61,7 @@
       <Filter>Source Files\Models</Filter>
     </ClCompile>
     <ClCompile Include="BallController.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Controllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +96,7 @@
       <Filter>Header Files\Models</Filter>
     </ClInclude>
     <ClInclude Include="BallController.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

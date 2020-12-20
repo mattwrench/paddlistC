@@ -16,6 +16,7 @@ void BallController::update(float dt)
 	{
 		setPosition(**iter, dt);
 		boundsCheck(**iter);
+		collisionDetect(**iter);
 	}
 }
 
@@ -62,5 +63,23 @@ void BallController::spawnBalls(float dt)
 		pBall = new Ball(world.width, world.height);
 		world.pBalls.push_back(pBall);
 		spawnTimer = 0;
+	}
+}
+
+// Handles collisions between paddles and balls
+void BallController::collisionDetect(Ball& ball)
+{
+	// Player
+	// Velocity condition prevents balls sticking to paddles
+	if (ball.sprite.getGlobalBounds().intersects(world.player.sprite.getGlobalBounds())
+		&& ball.velocity.x < 0)
+	{
+		ball.velocity.x *= -1;
+	}
+
+	else if (ball.sprite.getGlobalBounds().intersects(world.enemy.sprite.getGlobalBounds())
+		&& ball.velocity.x > 0)
+	{
+		ball.velocity.x *= -1;
 	}
 }

@@ -11,6 +11,7 @@ public:
 private:
 	void boundsCheck(Entity& entity);
 	void spawnBalls(float dt);
+	void collisionDetect(Ball& ball);
 	float spawnTimer;
 };
 
